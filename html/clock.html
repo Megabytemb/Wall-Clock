@@ -1,10 +1,20 @@
-<div layout-fill layout="column" layout-align="center center">
-	<md-card class="md-padding">
-		<md-card-content>
-			<div layout="column" style="text-align:center">
-			    <div class="md-display-4">{{clock | date:'shortTime'}}</div>
-			    <div class="md-display-2">{{clock | date:'shortDate'}}</div>
+<div layout="row" layout-fill>
+	<div flex="25" layout="column">
+			<div ng-repeat="(light_id, light) in lights" flex>
+				<md-button class="md-raised" ng-click="ToggleLight(light_id, light.state.on)">
+					<md-icon ng-class="{'md-accent': light.state.on}" md-font-set="material-icons">power_settings_new</md-icon>
+					{{light.name}}
+				</md-button>
 			</div>
-		</md-card-content>
-	</md-card>
+	</div>
+	<div layout-fill layout="column" layout-align="center center">
+		<md-card class="md-padding">
+			<md-card-content>
+				<div layout="column" style="text-align:center">
+				    <div class="md-display-4">{{clock | date:'shortTime'}}</div>
+				    <div class="md-display-2">{{clock | date:'shortDate'}}</div>
+				</div>
+			</md-card-content>
+		</md-card>
+	</div>
 </div>
