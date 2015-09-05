@@ -2,7 +2,9 @@ var app = angular.module('WallClockApp', ['ngMaterial', 'ngRoute', 'hue']);
 
 app.config(function ($routeProvider, $mdThemingProvider) {
 	$mdThemingProvider.theme('default')
-	    .primaryPalette('deep-purple');
+	    .primaryPalette('deep-purple')
+		.accentPalette('blue')
+		.dark();
 	
 	$routeProvider
 	  
