@@ -2,7 +2,7 @@
 	<div flex="20" layout="column"  layout-align="center start">
 			<div ng-repeat="(light_id, light) in lights" flex>
 				<md-button ng-click="ToggleLight(light_id, light.state.on)">
-					<md-icon ng-class="{'md-accent': light.state.on}" md-font-set="material-icons">power_settings_new</md-icon>
+					<md-icon ng-class="light.class" md-font-set="material-icons">power_settings_new</md-icon>
 					{{light.name}}
 				</md-button>
 			</div>

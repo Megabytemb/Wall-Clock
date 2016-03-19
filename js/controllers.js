@@ -36,7 +36,26 @@ app.controller('ClockController', function ($scope, $timeout, hue) {
 	var lightTick = function()
 	{
 		$scope.myHue.getLights().then(function(lights) {
-	  	    $scope.lights = lights;
+			for (var key in lights) {
+			    // skip loop if the property is from prototype
+			    light = lights[key];
+				if (light.state.reachable && light.state.on) {
+					light.class = "md-accent";
+				}
+				else if (light.state.reachable)
+				{
+					light.class = "md-warn";
+				}
+				else
+				{
+					light.class = "";
+				}
+				lights[key] = light;
+			
+			}
+			$scope.lights = lights;
+		
+			console.log(lights);
 	  	});
 		$timeout(lightTick, $scope.tickInterval); // reset the timer
 	}
