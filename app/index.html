@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title ng-bind="pageTitle"></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+      <link rel="stylesheet" href="css/main.css">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body ng-controller="AppCtrl as app" layout="column">
+	  
+  	<md-toolbar md-scroll-shrink>
+  		<div class="md-toolbar-tools">
+  			<md-button class="md-icon-button" ng-click="app.toggleMenu()" hide-gt-md>
+  				<md-icon aria-label="menu" class="material-icons">
+  					menu
+  				</md-icon>
+  			</md-button>
+  		  <h3>
+  		    <span>Hello World</span>
+  		  </h3>
+  		</div>
+  	</md-toolbar>
+	
+	<div layout="row" flex>
+	  
+		<md-sidenav 
+		  	class="flex md-sidenav-left md-whiteframe-z2" 
+			md-component-id="menu" 
+			md-is-locked-open="$mdMedia('gt-md')"
+			ng-cloak>
+	
+		  	<md-content class="md-padding">
+		  		<md-button ng-click="app.closeMenu()" class="md-primary" hide-gt-md>
+		  		Close Sidenav Left
+		  		</md-button>
+		  		<p hide-md show-gt-md>
+		  			This sidenav is locked open on your device. To go back to the default behavior,
+		  			narrow your display.
+		  		</p>
+		  	</md-content>
+		</md-sidenav>
+	  
+		<md-content class="container md-padding" ui-view></md-content>
+	</div>
+
+      <script src="js/main.js"></script>
+  </body>
+</html>
