@@ -5,7 +5,7 @@ sudo: false
 
 script:
   - ./node_modules/.bin/gulp eslint
-  - ./node_modules/.bin/gulp unit
+  - ./node_modules/.bin/gulp test
 
 cache:
   directories:
