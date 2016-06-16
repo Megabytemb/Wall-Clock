@@ -52,7 +52,7 @@ describe('Unit: mainClock', function() {
   it('should show the correct date after a tick', function() {
 	  controller.tick();
 	  scope.$digest();
-	  var shortDate = $filter('date')(new Date(), 'shortDate');
+	  var shortDate = $filter('date')(new Date(), 'd/M/yy');
 	  expect(element[0].querySelector('.md-display-2').textContent).toEqual(shortDate);
   });
 
