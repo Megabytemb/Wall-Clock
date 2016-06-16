@@ -1,5 +1,5 @@
 const AppSettings = {
-  appTitle: 'Example Application',
+  appTitle: 'Wall Clock',
   apiUrl: '/api/v1'
 };
 

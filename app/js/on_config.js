@@ -1,17 +1,20 @@
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
-  'ngInject';
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThemingProvider) {
+    'ngInject';
 
-  $locationProvider.html5Mode(true);
+    $mdThemingProvider.theme('default')
+		.dark();
 
-  $stateProvider
-  .state('Home', {
-    url: '/',
-    controller: 'HomeCtrl as home',
-    templateUrl: 'home.html',
-    title: 'Home'
-  });
+    $locationProvider.html5Mode(true);
 
-  $urlRouterProvider.otherwise('/');
+    $stateProvider
+	    .state('Home', {
+	        url: '/',
+	        controller: 'HomeCtrl as home',
+	        templateUrl: 'home.html',
+	        title: 'Home'
+	    });
+
+    $urlRouterProvider.otherwise('/');
 
 }
 

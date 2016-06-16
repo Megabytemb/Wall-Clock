@@ -17,12 +17,4 @@ describe('Unit: HomeCtrl', function() {
     expect(ctrl).toBeDefined();
   });
 
-  it('should have a number variable equal to 1234', function() {
-    expect(ctrl.number).toEqual(1234);
-  });
-
-  it('should have a title variable equal to \'AngularJS, Gulp, and Browserify!\'', function() {
-    expect(ctrl.title).toEqual('AngularJS, Gulp, and Browserify! Written with keyboards and love!');
-  });
-
 });
