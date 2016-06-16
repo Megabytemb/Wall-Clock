@@ -9,7 +9,7 @@ gulp.task('deploy', ['prod'], function() {
 	if (process.env.CI)
 	{
 		var GH_TOKEN = process.env.GH_TOKEN
-		options.remoteUrl = "https://${GH_TOKEN}@github.com/megabytemb/Wall-Clock.git"
+		options.remoteUrl = `https://${GH_TOKEN}@github.com/megabytemb/Wall-Clock.git`
 	}
 
   // Any deployment logic should go here
