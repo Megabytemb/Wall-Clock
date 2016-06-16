@@ -14,8 +14,5 @@ cache:
 addons:
   sauce_connect: true
 
-deploy:
-  provider: script
-  script: ./deploy.sh
-  on:
-    branch: master
+after_success:
+	- "[[ $TRAVIS_BRANCH == \"master\" ]] && { gulp deploy; };"
