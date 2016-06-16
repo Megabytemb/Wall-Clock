@@ -57,8 +57,8 @@ const karmaBaseConfig = {
 
 const customLaunchers = {
   chrome: {
-    base: 'SauceLabs',
-    browserName: 'chrome'
+    base: 'chrome',
+	flags: ['--no-sandbox']
   }
 };
 
