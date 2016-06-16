@@ -16,6 +16,6 @@ addons:
 
 deploy:
   provider: script
-  script: echo Hello
+  script: gulp deploy
   on:
     branch: master
