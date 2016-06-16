@@ -1,1 +1,2 @@
 # Wall-Clock
+[![Build Status](https://saucelabs.com/open_sauce/build_status/megabytemb.svg)](https://saucelabs.com/beta/builds/032088f49f124ca5b83f1cd4e90f7662) [![Build Status](https://travis-ci.org/megabytemb/Wall-Clock.svg?branch=master)](https://travis-ci.org/megabytemb/Wall-Clock)
