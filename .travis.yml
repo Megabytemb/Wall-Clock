@@ -14,8 +14,5 @@ cache:
 addons:
   sauce_connect: true
 
-deploy:
-  provider: script
-  script: "./node_modules/.bin/gulp deploy"
-  on:
-    branch: master
+after_success:
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then ./node_modules/.bin/gulp deploy; fi
