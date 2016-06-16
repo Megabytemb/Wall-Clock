@@ -4,7 +4,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThem
     $mdThemingProvider.theme('default')
 		.dark();
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
 
     $stateProvider
 	    .state('Home', {
