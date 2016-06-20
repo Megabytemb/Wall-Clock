@@ -23,7 +23,7 @@ const requires = [
   'app.controllers',
   'app.services',
   'app.directives',
-  'ngMaterial'
+  'ngMaterial',
   'ngStorage',
   'ngHue'
 ];
