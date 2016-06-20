@@ -14,6 +14,7 @@ function AppCtrl($log, $mdSidenav) {
 	vm.toggleMenu = function() {
 		$mdSidenav('menu').toggle();
 	}
+	
 }
 
 export default {
