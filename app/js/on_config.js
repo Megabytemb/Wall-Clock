@@ -2,6 +2,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThem
     'ngInject';
 
     $mdThemingProvider.theme('default')
+    .accentPalette('blue')
 		.dark();
 
     $locationProvider.html5Mode(false);
