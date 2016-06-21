@@ -1,9 +1,8 @@
 function HomeCtrl() {
-  
+
   // ViewModel
   const vm = this;
   vm.temp='Hello World';
-
 
 }
 

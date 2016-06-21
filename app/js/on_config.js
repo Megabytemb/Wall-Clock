@@ -1,7 +1,8 @@
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThemingProvider) {
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThemingProvider, $logProvider, AppSettings) {
     'ngInject';
 
     $mdThemingProvider.theme('default')
+    .accentPalette('blue')
 		.dark();
 
     $locationProvider.html5Mode(false);
@@ -15,6 +16,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThem
 	    });
 
     $urlRouterProvider.otherwise('/');
+    
+    $logProvider.debugEnabled(AppSettings.debugEnabled)
 
 }
 

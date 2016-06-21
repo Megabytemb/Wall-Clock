@@ -12,6 +12,8 @@ import './controllers';
 import './services';
 import './directives';
 
+import 'ngstorage'
+import 'angular-hue-service';
 
 // create and bootstrap application
 const requires = [
@@ -21,7 +23,9 @@ const requires = [
   'app.controllers',
   'app.services',
   'app.directives',
-  'ngMaterial'
+  'ngMaterial',
+  'ngStorage',
+  'ngHue'
 ];
 
 // mount on window for testing

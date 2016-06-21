@@ -21,6 +21,7 @@ function mainClock() {
 	          });
 	    },
 		controllerAs:'vm',
+      scope: true,
 		bindToController: true 
 	};
 }

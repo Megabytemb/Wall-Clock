@@ -7,7 +7,7 @@ describe('Unit: mainClock', function() {
   let element;
   let scope;
   let $filter;
-  let controller;
+  let vm;
 
   beforeEach(function() {
     angular.mock.module('app');
@@ -23,8 +23,8 @@ describe('Unit: mainClock', function() {
 	  $compile(element)(scope);
       scope.$digest();
 	  
-	  controller = scope.vm;
-	 
+	  vm = element.scope().vm;
+   
     });
   });
 
@@ -43,14 +43,14 @@ describe('Unit: mainClock', function() {
   });
   
   it('should show the correct time after a tick', function() {
-	  controller.tick();
+	  vm.tick();
 	  scope.$digest();
 	  var shortTime = $filter('date')(new Date(), 'shortTime');
 	  expect(element[0].querySelector('.md-display-4').textContent).toEqual(shortTime);
   });
   
   it('should show the correct date after a tick', function() {
-	  controller.tick();
+	  vm.tick();
 	  scope.$digest();
 	  var shortDate = $filter('date')(new Date(), 'd/M/yy');
 	  expect(element[0].querySelector('.md-display-2').textContent).toEqual(shortDate);
