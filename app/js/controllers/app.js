@@ -43,21 +43,40 @@ function _createHueUser()
 		$localStorage.HueUsername = response[0].success.username;
 		connectToHue($localStorage.HueUsername);
   	}, function errorCallback(response) {
-		if (response[0].error.type === 101) {
-			showHueSetup();
-		};
+  		if (response[0].error.type === 101) {
+  			showHueSetup();
+  		};
   	});
 }
 
 function connectToHue(username){
-	ngHue.setup({
-		username: username
-	})
-	$mdToast.show(
-	      $mdToast.simple()
-	        .textContent('connected to Hue Bridge')
-	        .hideDelay(3000)
-	    );
+  var config = {}
+  ngHue.discover().then(
+    function(bridges) {
+        if(bridges.length === 0) {
+            console.log('No bridges found.');
+        }
+        else {
+            bridges.forEach(function(b) {
+                console.log('Bridge found at IP address %s.', b.internalipaddress);
+                config.bridgeIP = b.internalipaddress;
+            });
+        }
+    },
+    function(error) {
+        console.error(error.message);
+    }
+  ).then(function() {
+    if (config.bridgeIP !== undefined) {
+      config.username = username
+    	ngHue.setup(config)
+    	$mdToast.show(
+    	      $mdToast.simple()
+    	        .textContent('connected to Hue Bridge')
+    	        .hideDelay(3000)
+    	    );
+    }
+  });
 }
 	
 }

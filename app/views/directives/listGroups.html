@@ -1,0 +1,6 @@
+<div ng-repeat="group in vm.groups" flex>
+  <md-button ng-click="vm.toggleGroup(group)">
+		<md-icon ng-class="group.state.any_on ? 'md-accent' : 'md-warn'" md-font-set="material-icons">power_settings_new</md-icon>
+		{{group.name}}
+	</md-button>
+</div>

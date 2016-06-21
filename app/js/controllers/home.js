@@ -1,12 +1,8 @@
-function HomeCtrl(ngHue) {
-  'ngInject'
+function HomeCtrl() {
+
   // ViewModel
   const vm = this;
   vm.temp='Hello World';
-  
-  ngHue.getGroups().then(function(groups) {
-	  console.log(groups);
-  })
 
 }
 
