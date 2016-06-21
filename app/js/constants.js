@@ -1,7 +1,8 @@
 const AppSettings = {
   appTitle: 'Wall Clock',
   apiUrl: '/api/v1',
-  HueAppName: 'WallClock'
+  HueAppName: 'WallClock',
+  debugEnabled: false
 };
 
 export default AppSettings;

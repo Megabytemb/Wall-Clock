@@ -1,4 +1,4 @@
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThemingProvider) {
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThemingProvider, $logProvider, AppSettings) {
     'ngInject';
 
     $mdThemingProvider.theme('default')
@@ -15,6 +15,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $mdThem
 	    });
 
     $urlRouterProvider.otherwise('/');
+    
+    $logProvider.debugEnabled(AppSettings.debugEnabled)
 
 }
 
