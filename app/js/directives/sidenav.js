@@ -13,7 +13,9 @@ function sideNav() {
     templateUrl: 'directives/sidenav.html',
   	controller: sideNavController,
 	controllerAs:'vm',
-	bindToController: true 
+    scope: true,
+	bindToController: true
+    
   };
 }
 
